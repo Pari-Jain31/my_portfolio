@@ -1,0 +1,403 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio | Pari Jain</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        /* Confetti CSS */
+        .confetti {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 0;
+            pointer-events: none;
+            overflow: visible;
+        }
+
+        .confetti-piece {
+            position: absolute;
+            width: 10px;
+            height: 10px;
+            background-color: red;
+            opacity: 0.8;
+            animation: fall 3s linear forwards;
+        }
+
+        @keyframes fall {
+            0% { transform: translateY(0) rotate(0deg); opacity: 1; }
+            100% { transform: translateY(100vh) rotate(360deg); opacity: 0; }
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="container">
+            <h1 class="logo">DEVELOPER</h1>
+            <ul class="nav-links">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#achievements">Achievements</a></li>
+                <li><a href="#research">Leadership</a></li>
+                <li><a href="#testimonials">Testimonials</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="container hero-container">
+            <div class="hero-content">
+                <h2>Hi, I'm <span class="highlight">Pari Jain</span></h2>
+                <p class="subtitle">BCA Student | Developer | Tech Enthusiast</p>
+                <p class="description">
+                    Enthusiastic learner with growing experience in AWS, Python and Java, 
+                    with a keen interest in software development and AI/ML. 
+                    Actively building impactful, technology-driven solutions.
+                </p>
+                <div class="cta-buttons">
+                    <a href="Pari Jain Resume.pdf" download class="btn btn-primary"><i class="fas fa-download"></i> Download Resume</a>
+                    <a href="#contact" class="btn btn-secondary">Get In Touch</a>
+                </div>
+            </div>
+            <div class="hero-image">
+                <img src="Pari Jain.png" alt="Pari Jain Profile Picture">
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about">
+        <div class="container">
+            <h2 class="section-title">About Me</h2>
+            <div class="about-content">
+                <div class="about-text">
+                    <p>
+                        I am an enthusiastic learner currently pursuing a Bachelor of Computer Applications (BCA) 
+                        from Amity University, Raipur, Chhattisgarh. I am passionate about software development, 
+                        AWS, Python, and Java, with a strong interest in AI/ML and building real-world solutions.
+                    </p>
+                    <p>
+                        Beyond academics, I enjoy leading and organizing technical events, participating in hackathons, 
+                        and collaborating with teams to solve challenging problems.
+                    </p>
+                    <div class="education">
+                        <h3>Education</h3>
+                        <p><strong>Bachelor of Computer Applications</strong></p>
+                        <p>Amity University, Raipur, Chhattisgarh</p>
+                        <p>CGPA: 8.64 / 10</p>
+                        <br>
+                        <p><strong>Higher Secondary Education (12th, CBSE)</strong></p>
+                        <p>Sanskar International School, Bargarh – 80%</p>
+                        <br>
+                        <p><strong>Secondary Education (10th, CBSE)</strong></p>
+                        <p>Vikash Residential School, Bargarh – 75%</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="projects">
+        <div class="container">
+            <h2 class="section-title">Projects</h2>
+            <div class="projects-grid">
+                <!-- Project Cards -->
+                <div class="project-card">
+                    <h3>Course Management System</h3>
+                    <p>
+                        A web-based platform that allows administrators and instructors to manage courses, 
+                        upload materials, track student performance, and automate grading processes with 
+                        secure login and database integration.
+                    </p>
+                    <div class="tech-stack">
+                        <span class="tech-tag">Web Development</span>
+                        <span class="tech-tag">MySQL</span>
+                        <span class="tech-tag">SQL</span>
+                    </div>
+                </div>
+                <div class="project-card">
+                    <h3>Student Result Management System</h3>
+                    <p>
+                        Desktop-based system for managing student data, attendance, results, and feedback, 
+                        aimed at improving record accuracy and minimizing manual work using database-driven automation.
+                    </p>
+                    <div class="tech-stack">
+                        <span class="tech-tag">C++ / Java</span>
+                        <span class="tech-tag">MySQL</span>
+                    </div>
+                </div>
+                <div class="project-card">
+                    <h3>Voice Recognition JARVIS</h3>
+                    <p>
+                        A Python-based personal assistant using speech recognition libraries that performs 
+                        tasks like opening applications, searching the web, and answering queries via voice commands.
+                    </p>
+                    <div class="tech-stack">
+                        <span class="tech-tag">Python</span>
+                        <span class="tech-tag">Speech Recognition</span>
+                    </div>
+                </div>
+                <div class="project-card">
+                    <h3>Robo Speaker</h3>
+                    <p>
+                        Text-to-speech software that converts textual data into clear, human-like speech using Python’s 
+                        pyttsx3 library, supporting offline voice output for accessibility and automation.
+                    </p>
+                    <div class="tech-stack">
+                        <span class="tech-tag">Python</span>
+                        <span class="tech-tag">pyttsx3</span>
+                    </div>
+                </div>
+                <div class="project-card">
+                    <h3>Women Safety Analysis</h3>
+                    <p>
+                        Data analysis project on crime reports and safety parameters to identify high-risk zones for women, 
+                        using visualization and predictive analytics to recommend preventive measures and raise awareness.
+                    </p>
+                    <div class="tech-stack">
+                        <span class="tech-tag">Data Analysis</span>
+                        <span class="tech-tag">Visualization</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="skills">
+        <div class="container">
+            <h2 class="section-title">Skills</h2>
+            <div class="skills-grid">
+                <div class="skill-category">
+                    <h3>Languages & Technologies</h3>
+                    <ul>
+                        <li>C, C++, Java</li>
+                        <li>JavaScript</li>
+                        <li>SQL</li>
+                        <li>Python</li>
+                        <li>Web Development</li>
+                    </ul>
+                </div>
+                <div class="skill-category">
+                    <h3>Frameworks & Databases</h3>
+                    <ul>
+                        <li>React.js</li>
+                        <li>MySQL</li>
+                    </ul>
+                </div>
+                <div class="skill-category">
+                    <h3>Tools</h3>
+                    <ul>
+                        <li>Git / GitHub</li>
+                        <li>VS Code</li>
+                    </ul>
+                </div>
+                <div class="skill-category">
+                    <h3>Soft Skills</h3>
+                    <ul>
+                        <li>Problem-Solving</li>
+                        <li>Team Leadership</li>
+                        <li>Decision-Making</li>
+                        <li>Project Management</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Achievements Section with Confetti -->
+    <section id="achievements" class="achievements" style="position: relative;">
+        <div class="container">
+            <h2 class="section-title">Achievements & Certifications</h2>
+            <div class="achievements-grid">
+                <div id="confettiAchieve" class="confetti"></div>
+                <!-- Achievement Cards -->
+                <div class="achievement-card">
+                    <i class="fas fa-trophy achievement-icon"></i>
+                    <h3>Winner – Internal Smart India Hackathon 2025</h3>
+                    <p class="achievement-date">Problem Statement: Real-Time Public Transport</p>
+                    <p>Team Leader for the project selected as the winning solution under the internal SIH 2025.</p>
+                </div>
+                <div class="achievement-card">
+                    <i class="fas fa-medal achievement-icon"></i>
+                    <h3>Winner – National Level Hackathon 2024</h3>
+                    <p class="achievement-date">Jhulelal Institute of Technology</p>
+                    <p>Secured first place in a national-level hackathon for innovative problem-solving and implementation.</p>
+                </div>
+                <div class="achievement-card">
+                    <i class="fas fa-trophy achievement-icon"></i>
+                    <h3>Winner – Internal Smart India Hackathon 2024</h3>
+                    <p class="achievement-date">Problem Statement: Women Safety Analysis</p>
+                    <p>Recognized for impactful data-driven solution towards women’s safety.</p>
+                </div>
+                <div class="achievement-card">
+                    <i class="fas fa-certificate achievement-icon"></i>
+                    <h3>Workshop on Networking Fundamentals</h3>
+                    <p class="achievement-date">Pynet Labs | 06 May, 2025</p>
+                    <p>Completed a workshop covering core networking concepts and fundamentals.</p>
+                </div>
+                <div class="achievement-card">
+                    <i class="fas fa-certificate achievement-icon"></i>
+                    <h3>A Complete Guide to Building Web Applications</h3>
+                    <p class="achievement-date">GUVI | 03 October, 2024</p>
+                    <p>Learned end-to-end web application development concepts and best practices.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Leadership Section -->
+    <section id="research" class="research">
+        <div class="container">
+            <h2 class="section-title">Leadership & Experience</h2>
+            <div class="research-list">
+                <div class="research-paper">
+                    <div class="paper-header">
+                        <i class="fas fa-users paper-icon"></i>
+                        <div class="paper-info">
+                            <h3>Secretary | TEDx, Amity University Chhattisgarh</h3>
+                            <p class="paper-venue">September 2025 – Present</p>
+                        </div>
+                    </div>
+                    <p class="paper-abstract">
+                        Supported event execution and team coordination for TEDx initiatives on campus. 
+                        Collaborated on speaker curation, event promotion, and sponsorship outreach while 
+                        ensuring alignment with TEDx guidelines and university protocols.
+                    </p>
+                </div>
+                <div class="research-paper">
+                    <div class="paper-header">
+                        <i class="fas fa-users-cog paper-icon"></i>
+                        <div class="paper-info">
+                            <h3>Secretary | Devity Club, Amity University Chhattisgarh</h3>
+                            <p class="paper-venue">March 2025 – Present</p>
+                        </div>
+                    </div>
+                    <p class="paper-abstract">
+                        Coordinated club operations, meetings, and events to maintain smooth communication among members. 
+                        Assisted in organizing technical workshops, mentorship programs, and inter-college events under the 
+                        DEVITY Summit initiative, contributing to community engagement and student development.
+                    </p>
+                </div>
+                <div class="research-paper">
+                    <div class="paper-header">
+                        <i class="fas fa-code paper-icon"></i>
+                        <div class="paper-info">
+                            <h3>Web Development Coordinator | Devity Club</h3>
+                            <p class="paper-venue">August 2024 – March 2025</p>
+                        </div>
+                    </div>
+                    <p class="paper-abstract">
+                        Led the development and maintenance of the official club website and digital platforms. 
+                        Managed a team of developers to design user-friendly web interfaces and regularly update 
+                        event information and announcements.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section id="testimonials" class="testimonials">
+        <div class="container">
+            <h2 class="section-title">Testimonials & Feedback</h2>
+            <p>
+                I value feedback from my mentors, team members, and industry professionals. 
+                If you’ve worked with me or guided me, please share your testimonial. 
+                Your insights will help me grow and may be featured on my portfolio (with your permission).
+            </p>
+            <a href="https://forms.gle/eZiKQYeLNBP7JVBf8" target="_blank" class="btn btn-primary">
+                <i class="fas fa-comment-dots"></i> Submit Your Feedback
+            </a>
+        </div>
+    </section>
+
+     <!-- Contact Section -->
+    <section id="contact" class="contact">
+        <div class="container">
+            <h2 class="section-title">Get In Touch</h2>
+            <p class="contact-intro">
+                       Always eager to collaborate and turn tech ideas into reality!
+            </p>
+            <div class="contact-methods">
+                <div class="contact-item">
+                    <i class="fas fa-envelope contact-icon"></i>
+                    <h3>Email</h3>
+                    <p><a href="mailto:jainpari320@gmail.com">jainpari320@gmail.com</a></p>
+                </div>
+                <div class="contact-item">
+                    <i class="fab fa-linkedin contact-icon"></i>
+                    <h3>LinkedIn</h3>
+                    <p><a href="https://www.linkedin.com/in/pari-jain-627731325?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" target="_blank">LinkedIn Profile</a></p>
+                </div>
+                <div class="contact-item">
+                    <i class="fab fa-github contact-icon"></i>
+                    <h3>GitHub</h3>
+                    <p><a href="https://github.com/Pari-Jain31" target="_blank">GitHub Profile</a></p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <p class="footer-intro">Let’s connect and explore exciting tech ideas!</p>
+            <div class="footer-social">
+                <a href="mailto:jainpari320@gmail.com" class="footer-icon" title="Email">
+                    <i class="fas fa-envelope"></i>
+                </a>
+                <a href="https://www.linkedin.com/in/pari-jain-627731325?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" target="_blank" class="footer-icon" title="LinkedIn">
+                    <i class="fab fa-linkedin"></i>
+                </a>
+                <a href="https://github.com/Pari-Jain31" target="_blank" class="footer-icon" title="GitHub">
+                    <i class="fab fa-github"></i>
+                </a>
+            </div>
+            <p>&copy; 2025 Pari Jain. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!-- Confetti JS -->
+    <script>
+        // Confetti only in Achievements
+        function createConfetti() {
+            const confettiContainer = document.getElementById('confettiAchieve');
+            confettiContainer.innerHTML = '';
+            const colors = ['#f44336','#e91e63','#9c27b0','#2196f3','#4caf50','#ffeb3b','#ff9800'];
+            for (let i = 0; i < 50; i++) {
+                const confetti = document.createElement('div');
+                confetti.classList.add('confetti-piece');
+                confetti.style.left = Math.random() * confettiContainer.offsetWidth + 'px';
+                confetti.style.backgroundColor = colors[Math.floor(Math.random() * colors.length)];
+                confetti.style.animationDuration = (2 + Math.random() * 3) + 's';
+                confetti.style.width = (5 + Math.random() * 10) + 'px';
+                confetti.style.height = confetti.style.width;
+                confettiContainer.appendChild(confetti);
+            }
+            confettiContainer.style.display = 'block';
+        }
+
+        let confettiTriggered = false;
+        window.addEventListener('scroll', function() {
+            const achievementsSection = document.getElementById('achievements');
+            const sectionTop = achievementsSection.getBoundingClientRect().top;
+            const windowHeight = window.innerHeight;
+
+            if(sectionTop < windowHeight - 100 && !confettiTriggered) {
+                createConfetti();
+                confettiTriggered = true;
+            }
+        });
+    </script>
+</body>
+</html>
+
