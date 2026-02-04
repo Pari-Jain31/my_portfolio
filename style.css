@@ -75,6 +75,26 @@ body {
   cursor:pointer;
 }
 
+/* ===== NAVBAR LIGHT MODE FIX ===== */
+body.light .navbar {
+  background: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(10px);
+  box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+}
+
+body.light .nav-links a {
+  color: #111;
+}
+
+body.light .logo {
+  color: #0066ff;
+}
+
+body.light #themeToggle {
+  color: #111;
+}
+
+
 /* ================= HERO ================= */
 .hero {
   min-height:100vh;
@@ -225,14 +245,33 @@ body {
   border-bottom:none;
 }
 
+/* ===== LIGHT MODE CARDS FIX ===== */
+body.light .card {
+  background: #ffffff;
+  color: #111;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+  border: 1px solid rgba(0,0,0,0.05);
+}
+
+/* Section background polish */
+body.light .about,
+body.light .contact {
+  background: #f8fafc;
+}
+
+/* Titles in light mode */
+body.light .section-title {
+  color: #0f172a;
+}
+
+/* Hover effect (premium feel) */
+body.light .card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 18px 40px rgba(0,102,255,0.2);
+}
+
+
 /* ================= ACHIEVEMENTS ================= */
-
-
-
-/* Achievement Card */
-/* ============================= */
-/* ACHIEVEMENTS SECTION */
-/* ============================= */
 
 .achievements {
   padding: 100px 60px;
@@ -398,6 +437,7 @@ body {
 }
 
 
+
 /* ================= LEADERSHIP (UNCHANGED) ================= */
 .leadership {
   padding:100px 8%;
@@ -416,7 +456,6 @@ body {
 }
 
 /* ================= CONTACT ================= */
-/* ================= CONTACT FULL WIDTH ================= */
 .contact-full {
   width: 100vw;
   margin-left: calc(-50vw + 50%);
@@ -482,6 +521,34 @@ body {
   border: 1px solid #fbbf24;
   box-shadow: 0 0 30px rgba(251,191,36,0.25);
 }
+
+/* ===== SUN / MOON TOGGLE ===== */
+.theme-btn {
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  border: none;
+  background: linear-gradient(135deg, #1e293b, #020617);
+  color: #facc15;
+  cursor: pointer;
+  font-size: 18px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: 0.4s;
+}
+
+.theme-btn:hover {
+  transform: rotate(20deg) scale(1.1);
+}
+
+/* light mode button look */
+body.light .theme-btn {
+  background: linear-gradient(135deg, #fde68a, #f97316);
+  color: #0f172a;
+}
+
+
 
 /* ================= FOOTER (NO GAP) ================= */
 .footer-full {
@@ -551,10 +618,7 @@ body {
   }
 }
 
-/* ============================= */
 /* CERTIFICATIONS SECTION */
-/* ============================= */
-
 .certifications {
   padding: 100px 60px;
 }
@@ -612,9 +676,6 @@ body {
   }
 }
 
-/* ============================= */
-/* PROJECTS SECTION */
-/* ============================= */
 /* PROJECTS SECTION */
 .projects {
   position: relative;
@@ -622,8 +683,6 @@ body {
   background: radial-gradient(circle at top, #12061f, #05000d);
   overflow: hidden;
 }
-
-
 
 /* title */
 .section-title {
@@ -689,13 +748,7 @@ body {
   }
 }
 
-
-
-
-/* ============================= */
 /* ABOUT SECTION */
-/* ============================= */
-
 .about {
   padding: 110px 0;
   
@@ -732,7 +785,15 @@ body {
 .about-text p {
   font-size: 0.95rem;
   line-height: 1.7;
-  color: #d1d5db;
+ /* ===== ABOUT TEXT FIX ===== */
+body:not(.light) .about-text p {
+  color: #e5e7eb;
+}
+
+body:not(.light) .about-intro {
+  color: #f1f5f9;
+}
+
   margin-bottom: 14px;
 }
 
@@ -769,16 +830,7 @@ body {
   }
 }
 
-
-/* Education Meta (Duration + Score) */
-/* ============================= */
-/* EDUCATION – PREMIUM STYLE */
-/* ============================= */
-
-/* ============================= */
-/* EDUCATION – PREMIUM STYLE */
-/* ============================= */
-
+/* EDUCATION */
 .education {
   padding: 100px 60px;
 }
@@ -882,10 +934,6 @@ body {
   }
 }
 
-/* ============================= */
-/* TESTIMONIALS */
-/* ============================= */
-
 /* Testimonials */
 .testimonials {
   padding: 90px 20px;
@@ -950,16 +998,8 @@ body {
   line-height: 1.6;
   color: #e5e7f5;
 }
-
-
-
-
-/* =============================== */
-/* LINKEDIN EXPERIENCE STYLE */
-/* =============================== */
-
 /* ===============================
-   LINKEDIN EXPERIENCE CARD
+   /*LINKEDIN EXPERIENCE CARD
 ================================ */
 
 .linkedin-card {
@@ -1271,4 +1311,38 @@ section:last-of-type {
 /* Safety: remove overflow artifacts */
 body {
   overflow-x: hidden;
+}
+
+.card h3 {
+  color: var(--text);
+}
+
+.card p {
+  color: var(--text);
+  opacity: 0.8;
+}
+
+/* ================= NAVIGATION UX IMPROVEMENTS (NEW) ================= */
+
+/* Smooth scrolling for menu navigation */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Active navbar link highlight */
+.nav-links a.active {
+  color: var(--accent);
+  border-bottom: 2px solid var(--accent);
+  padding-bottom: 4px;
+}
+
+/* Hover polish */
+.nav-links a:hover {
+  color: var(--accent);
+}
+
+/* Light mode active link fix */
+body.light .nav-links a.active {
+  color: #0066ff;
+  border-bottom-color: #0066ff;
 }

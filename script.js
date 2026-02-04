@@ -1,12 +1,26 @@
 /* DARK MODE */
+/* DARK MODE */
 const toggle = document.getElementById("themeToggle");
-toggle.onclick = () => {
+const icon = toggle.querySelector("i");
+
+toggle.addEventListener("click", () => {
   document.body.classList.toggle("light");
-  localStorage.setItem("theme", document.body.classList.contains("light"));
-};
+
+  const isLight = document.body.classList.contains("light");
+  localStorage.setItem("theme", isLight);
+
+  if (isLight) {
+    icon.classList.replace("fa-moon", "fa-sun");
+  } else {
+    icon.classList.replace("fa-sun", "fa-moon");
+  }
+});
+
 if (localStorage.getItem("theme") === "true") {
   document.body.classList.add("light");
+  icon.classList.replace("fa-moon", "fa-sun");
 }
+
 
 /* MOBILE MENU */
 const menu = document.querySelector(".nav-links");
@@ -47,3 +61,67 @@ function animate() {
 animate();
 
 
+/* ================= BASIC ANALYTICS / EVENT TRACKING ================= */
+
+// Initialize analytics store
+const analytics = JSON.parse(localStorage.getItem("analytics")) || {
+  clicks: {},
+  sectionViews: {}
+};
+
+// Save analytics
+function saveAnalytics() {
+  localStorage.setItem("analytics", JSON.stringify(analytics));
+}
+
+// Track clicks
+function trackClick(name) {
+  analytics.clicks[name] = (analytics.clicks[name] || 0) + 1;
+  saveAnalytics();
+  console.log(`Click tracked: ${name}`, analytics.clicks[name]);
+}
+
+// Track section views
+function trackSectionView(sectionId) {
+  if (!analytics.sectionViews[sectionId]) {
+    analytics.sectionViews[sectionId] = 1;
+    saveAnalytics();
+    console.log(`Section viewed: ${sectionId}`);
+  }
+}
+
+/* ---------- BUTTON CLICK TRACKING ---------- */
+
+// Theme toggle
+document.getElementById("themeToggle")?.addEventListener("click", () => {
+  trackClick("Theme Toggle");
+});
+
+// Mobile menu
+document.getElementById("menuToggle")?.addEventListener("click", () => {
+  trackClick("Mobile Menu");
+});
+
+// Nav links
+document.querySelectorAll(".nav-links a").forEach(link => {
+  link.addEventListener("click", () => {
+    trackClick(`Nav: ${link.textContent}`);
+  });
+});
+
+/* ---------- SECTION VIEW TRACKING ---------- */
+
+const trackedSections = document.querySelectorAll("section[id]");
+
+const observer = new IntersectionObserver(
+  entries => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        trackSectionView(entry.target.id);
+      }
+    });
+  },
+  { threshold: 0.6 }
+);
+
+trackedSections.forEach(section => observer.observe(section));
