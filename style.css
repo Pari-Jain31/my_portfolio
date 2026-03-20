@@ -1068,25 +1068,41 @@ body:not(.light) .about-intro {
    TIMELINE
 ================================ */
 
-.timeline {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+.roles {
+  position: relative;
+  margin-left: 10px;
+  padding-left: 30px;
 }
 
-.timeline .dot {
+/* Vertical line */
+.roles::before {
+  content: "";
+  position: absolute;
+  left: 6px;
+  top: 0;
+  width: 2px;
+  height: 100%;
+  background: rgba(168, 85, 247, 0.4);
+}
+
+/* Each role */
+.role-item {
+  position: relative;
+  margin-bottom: 35px;
+  padding-left: 10px;
+}
+
+/* Dot */
+.role-item::before {
+  content: "";
+  position: absolute;
+  left: -24px;
+  top: 6px;
   width: 10px;
   height: 10px;
   background: #a855f7;
   border-radius: 50%;
-  margin-top: 4px;
-}
-
-.timeline .line {
-  width: 2px;
-  flex-grow: 1;
-  background: rgba(168, 85, 247, 0.4);
-  margin-top: 6px;
+  box-shadow: 0 0 10px #a855f7;
 }
 
 /* ===============================
