@@ -785,16 +785,15 @@ body.light .theme-btn {
 .about-text p {
   font-size: 0.95rem;
   line-height: 1.7;
- /* ===== ABOUT TEXT FIX ===== */
+  margin-bottom: 14px;
+}
+
 body:not(.light) .about-text p {
   color: #e5e7eb;
 }
 
 body:not(.light) .about-intro {
   color: #f1f5f9;
-}
-
-  margin-bottom: 14px;
 }
 
 /* Highlight Cards */
@@ -1060,6 +1059,7 @@ body:not(.light) .about-intro {
 
 .role-item {
   display: flex;
+  align-items: flex-start;  /* ADD THIS */
   gap: 18px;
   padding-bottom: 30px;
 }
@@ -1069,10 +1069,9 @@ body:not(.light) .about-intro {
 ================================ */
 
 .timeline {
-  position: relative;
-  width: 14px;
   display: flex;
-  justify-content: center;
+  flex-direction: column;
+  align-items: center;
 }
 
 .timeline .dot {
@@ -1084,11 +1083,10 @@ body:not(.light) .about-intro {
 }
 
 .timeline .line {
-  position: absolute;
-  top: 16px;
   width: 2px;
-  height: 100%;
+  flex-grow: 1;
   background: rgba(168, 85, 247, 0.4);
+  margin-top: 6px;
 }
 
 /* ===============================
